@@ -70,6 +70,7 @@ pub mod menu {
         Help,
         Back,
         Exit,
+        NewGame {index: u32},
         Invalid
     }
 }
