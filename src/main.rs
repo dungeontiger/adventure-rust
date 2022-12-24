@@ -21,15 +21,12 @@ fn main() {
     while choice != MenuChoice::Exit {
          choice = main_menu.show();
          match choice {
-            MenuChoice::Invalid => {
-                println!("\nYou entered an invalid choice. Please choose again.\n");
-                press_btn_continue::wait("Press any key to continue...").expect("Failed to wait for any key.");
-            },
             MenuChoice::Help => show_help(),
             MenuChoice::New => new_game(),
             _ => ()
          }
     }
+    println!("Thanks for playing!");
 }
 
 fn show_help() {
@@ -53,6 +50,7 @@ fn new_game() {
         choice = menu.show();
         match choice {
             MenuChoice::NewGame { index } => start_game(games[index as usize].to_str().unwrap()),
+            MenuChoice::Back => println!("back"),
             _ => ()
         }
     }
@@ -71,13 +69,38 @@ fn get_maps() -> Vec<OsString> {
 }
 
 fn get_map_name(filename: &str) -> String {
-    let mut file = File::open(format!("maps/{filename}")).expect("Could not open map file.");
-    let mut data = String::new();
-    file.read_to_string(&mut data).expect("Could not read text from map file.");
-    let map: Map = serde_json::from_str(&data).expect("JSON failed to parse");
+    let map: Map = load_map(filename);
     map.get_name().to_string()
 }
 
 fn start_game(file: &str) {
+    let mut choice = MenuChoice::Invalid;
+    let map = load_map(file);
+    let mut location = map.find_location(map.get_start_location());
+    while location.get_id() != map.get_end_location() && choice != MenuChoice::Back {
+        let description = format!("{}\n\n{}\n", location.get_name(), location.get_descritpion());
+        let mut menu = Menu::new("Paths", "> ");
+        menu.set_header(description.as_str());
+        for (i, path) in location.get_paths().iter().enumerate() {
+            menu.new_menu_item(path.get_name(), MenuChoice::Move { index: i as u32});
+        }
+        menu.new_menu_item("Back", MenuChoice::Back);
+        match menu.show() {
+            MenuChoice::Move { index } => location = map.find_location(location.get_paths()[index as usize].get_id()),
+            MenuChoice::Back => choice = MenuChoice::Back,
+            _ => ()
+        }
+    }
+    if location.get_id() == map.get_end_location() {
+        println!("{}\n\n{}", location.get_name(), location.get_descritpion());
+        println!("\nYou won!\n");
+        press_btn_continue::wait("Press any key to continue...").expect("Failed to wait for any key.");
+    }
+}
 
+fn load_map(filename: &str) -> Map {
+    let mut file = File::open(format!("maps/{filename}")).expect("Could not open map file.");
+    let mut data = String::new();
+    file.read_to_string(&mut data).expect("Could not read text from map file.");
+    serde_json::from_str(&data).expect("JSON failed to parse")
 }

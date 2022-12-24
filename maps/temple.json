@@ -1,7 +1,8 @@
 {
     "name": "Ancient Temple",
     "description": "Escape from the bowels of an ancient temple.",
+    "startLocation": "1",
+    "endLocation": "99",
     "locations": [
-        
     ]
 }

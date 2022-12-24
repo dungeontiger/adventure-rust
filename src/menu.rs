@@ -3,6 +3,7 @@ pub mod menu {
     use std::io::{stdin, stdout, Write};
 
     pub struct Menu {
+        header: Option<String>,
         menu_items: Vec<MenuItem>,
         title: String,
         prompt: String
@@ -11,6 +12,7 @@ pub mod menu {
     impl Menu {
         pub fn new(title: &str, prompt: &str) -> Menu {
             Menu {
+                header: None,
                 title: title.to_string(),
                 prompt: prompt.to_string(),
                 menu_items: vec![]
@@ -23,21 +25,46 @@ pub mod menu {
             self
         }
 
+        pub fn set_header(&mut self, header: &str) -> &mut Menu{
+            self.header = Some(header.to_string());
+            self
+        }
+
         pub fn show(&self) -> MenuChoice {
-            clear_screen();
-            println!("{}\n", self.title);
-            for (i, menu_item) in self.menu_items.iter().enumerate() {
-                println!("{}. {}", i + 1, menu_item.get_text());
+            let mut choice = MenuChoice::Invalid;
+            while choice == MenuChoice::Invalid {
+                clear_screen();
+                if self.header.is_some() {
+                    println!("{}", self.header.as_ref().unwrap());
+                }
+                println!("{}\n", self.title);
+                for (i, menu_item) in self.menu_items.iter().enumerate() {
+                    println!("{}. {}", i + 1, menu_item.get_text());
+                }
+                print!("\n{}", self.prompt);
+                stdout().flush().expect("Failed to flush output.");
+                let mut line = String::new();
+                stdin().read_line(&mut line).expect("Cannot read from stdio.");
+                let trimmed = line.trim();
+                match trimmed.parse::<u32>() {
+                    Ok(c) => {
+                        if c > self.menu_items.len() as u32 {
+                            choice = MenuChoice::Invalid;
+                        } else {
+                            choice = self.menu_items[(c - 1) as usize].get_choice()
+                        }
+                        },
+                    Err(_) => {
+                        choice = MenuChoice::Invalid;
+
+                    }
+                }
+                if choice == MenuChoice::Invalid {
+                    println!("\nYou entered an invalid choice. Please choose again.\n");
+                    press_btn_continue::wait("Press any key to continue...").expect("Failed to wait for any key.");
+                }
             }
-            print!("\n{}", self.prompt);
-            stdout().flush().expect("Failed to flush output.");
-            let mut line = String::new();
-            stdin().read_line(&mut line).expect("Cannot read from stdio.");
-            let trimmed = line.trim();
-            match trimmed.parse::<u32>() {
-                Ok(choice) => return self.menu_items[(choice - 1) as usize].get_choice(),
-                Err(_) => return MenuChoice::Invalid
-            }
+           choice
          }
     }
     
@@ -66,7 +93,7 @@ pub mod menu {
     #[derive(PartialEq, Clone, Copy, Debug)]
     pub enum MenuChoice {
         New,
-        Move {id: u32},
+        Move {index: u32},
         Help,
         Back,
         Exit,
