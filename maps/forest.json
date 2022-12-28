@@ -5,6 +5,242 @@
     "endLocation": "25",
     "locations": [
         {
+            "id": "1",
+            "name": "River Mouth",
+            "description": "West of you is a large body of water; north a river that runs east and west feeds it. The river water is cold and clean. You cannot cross the river. A small path leads south.",
+            "paths": [
+                {
+                    "name": "South following the path",
+                    "id": "6"
+                },
+                {
+                    "name": "East along the river bank",
+                    "id": "2"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "name": "River Bank",
+            "description": "A river north of you flows from east to west. Due to its size you cannot cross it.",
+            "paths": [
+                {
+                    "name": "West along the river bank",
+                    "id": "1"
+                },
+                {
+                    "name": "East along the river bank",
+                    "id": "3"
+                },
+                {
+                    "name": "South deeper into the forest",
+                    "id": "7"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "name": "River Bank",
+            "description": "A river north of you flows from east to west. The water is moving fast and you don't want to risk crossing it.",
+            "paths": [
+                {
+                    "name": "West along the river bank",
+                    "id": "2"
+                },
+                {
+                    "name": "East along the river bank",
+                    "id": "4"
+                },
+                {
+                    "name": "South deeper into the forest",
+                    "id": "8"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "name": "River Bank",
+            "description": "A river north of you flows from east to west. The water is very moving fast. To the east you can hear what sounds like roaring water.",
+            "paths": [
+                {
+                    "name": "West along the river bank",
+                    "id": "3"
+                },
+                {
+                    "name": "East along the river bank",
+                    "id": "5"
+                },
+                {
+                    "name": "South deeper into the forest",
+                    "id": "9"
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "name": "Waterfall",
+            "description": "A roaring waterfall from the east feeds a river that flows west.  The entire east side is a large cliff that cannot be climbed without equipment.",
+            "paths": [
+                {
+                    "name": "West along the river bank",
+                    "id": "4"
+                },
+                {
+                    "name": "South following the base of the cliff",
+                    "id": "9"
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "name": "Shore",
+            "description": "West of you is a large body of water that could be a lake or a sea. A small path runs north and south following the shoreline.",
+            "paths": [
+                {
+                    "name": "South following the path",
+                    "id": "11"
+                },
+                {
+                    "name": "North following the path",
+                    "id": "1"
+                },
+                {
+                    "name": "East into the forest",
+                    "id": "7"
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "name": "Forest",
+            "description": "The forest here is thin and inviting. You can smell fresh water near by.",
+            "paths": [
+                {
+                    "name": "South deeper into the forest",
+                    "id": "12"
+                },
+                {
+                    "name": "North through thinning trees",
+                    "id": "2"
+                },
+                {
+                    "name": "East",
+                    "id": "8"
+                },
+                {
+                    "name": "West",
+                    "id": "6"
+                }
+            ]
+        },
+        {
+            "id": "8",
+            "name": "Forest",
+            "description": "Strange mushrooms grow here in a circle. You wonder if you will see faries or dyrads at night.",
+            "paths": [
+                {
+                    "name": "South deeper into the forest",
+                    "id": "13"
+                },
+                {
+                    "name": "North through thinning trees",
+                    "id": "3"
+                },
+                {
+                    "name": "East",
+                    "id": "9"
+                },
+                {
+                    "name": "West",
+                    "id": "7"
+                }
+            ]
+        },
+        {
+            "id": "9",
+            "name": "Forest",
+            "description": "You here the splash of water in the distance. You can't really tell from what direction.",
+            "paths": [
+                {
+                    "name": "South deeper into the forest",
+                    "id": "14"
+                },
+                {
+                    "name": "North through thinning trees",
+                    "id": "4"
+                },
+                {
+                    "name": "East",
+                    "id": "10"
+                },
+                {
+                    "name": "West",
+                    "id": "8"
+                }
+            ]
+        },
+        {
+            "id": "10",
+            "name": "Cliff Face",
+            "description": "An unscalable cliff rises to the east. North you hear the splash of cascading water.",
+            "paths": [
+                {
+                    "name": "South along cliff face",
+                    "id": "15"
+                },
+                {
+                    "name": "North along cliff face",
+                    "id": "5"
+                },
+                {
+                    "name": "West",
+                    "id": "9"
+                }
+            ]
+        },
+        {
+            "id": "11",
+            "name": "Shore",
+            "description": "A large body of water lies to the west. There is a path which leads north and east.",
+            "paths": [
+                {
+                    "name": "South along shore",
+                    "id": "16"
+                },
+                {
+                    "name": "North following path",
+                    "id": "6"
+                },
+                {
+                    "name": "East following path",
+                    "id": "12"
+                }
+            ]
+        },
+        {
+            "id": "12",
+            "name": "Forest",
+            "description": "A path here runs east and west. The forest thins to the north and grows more dense to the south.",
+            "paths": [
+                {
+                    "name": "South deeper into the forest",
+                    "id": "17"
+                },
+                {
+                    "name": "North into thinning forest",
+                    "id": "7"
+                },
+                {
+                    "name": "East following path",
+                    "id": "13"
+                },
+                {
+                    "name": "West following path",
+                    "id": "11"
+                }
+            ]
+        },
+        {
             "id": "13",
             "name": "Middle of the Forest",
             "description": "You wake up in a thick forest. You have no idea how you got there.  Maybe try finding your way out? The sun is up and barely visible so you can at least determine which way is north. A rough path leads west. The forest seems thicker to the south and a little thinner north.",
@@ -28,6 +264,90 @@
             ]
         },
         {
+            "id": "14",
+            "name": "Forest",
+            "description": "You see an animal carcass here. Scavengers have gotten the best of it so you cannot tell exactly what it is. The forest thins to the north and grows more dense to the south.",
+            "paths": [
+                {
+                    "name": "South deeper into the forest",
+                    "id": "19"
+                },
+                {
+                    "name": "North into thinning forest",
+                    "id": "9"
+                },
+                {
+                    "name": "East",
+                    "id": "15"
+                },
+                {
+                    "name": "West",
+                    "id": "13"
+                }
+            ]
+        },
+        {
+            "id": "15",
+            "name": "Cliff Face",
+            "description": "A high cliff blocks your path to the east.",
+            "paths": [
+                {
+                    "name": "South along cliff face",
+                    "id": "20"
+                },
+                {
+                    "name": "North along cliff face",
+                    "id": "10"
+                },
+                {
+                    "name": "West",
+                    "id": "14"
+                }
+            ]
+        },
+        {
+            "id": "16",
+            "name": "Forest",
+            "description": "A large body of water is to the west. You think you see a large menancing fin in the distance but you can't be sure. The forest thins out to the north and grows more dense to the north.",
+            "paths": [
+                {
+                    "name": "South along shore",
+                    "id": "21"
+                },
+                {
+                    "name": "North along shore",
+                    "id": "11"
+                },
+                {
+                    "name": "East",
+                    "id": "17"
+                }
+            ]
+        },
+        {
+            "id": "17",
+            "name": "Clearing",
+            "description": "There is a natural clearing here. It forms a small, secluded glade. Wildflowers grow in its center. The forest gets thicker to the south and thinner to the north.",
+            "paths": [
+                {
+                    "name": "South deeper into the forest",
+                    "id": "2"
+                },
+                {
+                    "name": "North into thinning forest",
+                    "id": "12"
+                },
+                {
+                    "name": "East",
+                    "id": "18"
+                },
+                {
+                    "name": "West",
+                    "id": "16"
+                }
+            ]
+        },
+        {
             "id": "18",
             "name": "Dense Forest",
             "description": "The forest is dense here and a little darker. You see some mushrooms here.",
@@ -47,6 +367,82 @@
                 {
                     "name": "East",
                     "id": "19"
+                }
+            ]
+        },
+        {
+            "id": "19",
+            "name": "Forest",
+            "description": "A bush with bright red berries are here. Even though you are hungry you decide its best not to try them. The forest thins to the north and grows more dense to the south.",
+            "paths": [
+                {
+                    "name": "South deeper into the forest",
+                    "id": "24"
+                },
+                {
+                    "name": "North into thinning forest",
+                    "id": "14"
+                },
+                {
+                    "name": "East",
+                    "id": "20"
+                },
+                {
+                    "name": "West",
+                    "id": "18"
+                }
+            ]
+        },
+        {
+            "id": "20",
+            "name": "Cliff Face",
+            "description": "A large cliff face lies to the east. Here it is too high to scale.  It seems to fall off quickly to the south.",
+            "paths": [
+                {
+                    "name": "South",
+                    "id": "25"
+                },
+                {
+                    "name": "North along cliff face",
+                    "id": "15"
+                },
+                {
+                    "name": "West",
+                    "id": "19"
+                }
+            ]
+        },
+        {
+            "id": "21",
+            "name": "Shore",
+            "description": "The forest is very thick here. To the west lies a large body of water. To the south the bramble is impassably dense.",
+            "paths": [
+                {
+                    "name": "North along the shore",
+                    "id": "16"
+                },
+                {
+                    "name": "East",
+                    "id": "22"
+                }
+            ]
+        },
+        {
+            "id": "22",
+            "name": "Forest with Bramble",
+            "description": "Thick bramble blocks the way south. Evidence of rabbits and other small creatures living in the bramble is clear.",
+            "paths": [
+                {
+                    "name": "North",
+                    "id": "17"
+                },
+                {
+                    "name": "East",
+                    "id": "23"
+                },
+                {
+                    "name": "West",
+                    "id": "21"
                 }
             ]
         },
