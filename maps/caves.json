@@ -1,0 +1,271 @@
+{
+    "name": "Caves of Chaos",
+    "description": "Escape from a set of twisty-turny tunnels and caves. Fortunately you have a flashlight with extra batteries with you.",
+    "startLocation": "1",
+    "endLocation": "5",
+    "locations": [
+        {
+            "id": "1",
+            "name": "Cave",
+            "description": "You are in a small cave. The air is damp and musky. There are exits at either end of the cave.",
+            "paths": [
+                {
+                    "name": "Small Exit",
+                    "id": "2"
+                },
+                {
+                    "name": "Medium Exit",
+                    "id": "3"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Intersection",
+            "description": "You stand at a T intersection. A small passage forms the base of the T.",
+            "paths": [
+                {
+                    "name": "Small Passage",
+                    "id": "1"
+                },
+                {
+                    "name": "Left T Passage",
+                    "id": "4"
+                },
+                {
+                    "name": "Right T Passage",
+                    "id": "6"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "name": "Long Cave",
+            "description": "This cave is much longer than it is wide. There are many exits here.",
+            "paths": [
+                {
+                    "name": "Medium Sized Passage",
+                    "id": "1"
+                },
+                {
+                    "name": "Narrow Passage",
+                    "id": "16"
+                },
+                {
+                    "name": "Rough Passage",
+                    "id": "13"
+                },
+                {
+                    "name": "Small Passage",
+                    "id": "11"
+                },
+                {
+                    "name": "Large Passage",
+                    "id": "7"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "name": "Intersection",
+            "description": "You are at the intsection of 3 passages. One leads to another intersection farther down, one leads to another cave and the last one has a cool breeze coming from it.",
+            "paths": [
+                {
+                    "name": "Breezy Passage",
+                    "id": "5"
+                },
+                {
+                    "name": "Passage",
+                    "id": "2"
+                },
+                {
+                    "name": "Passage to Another Intersection",
+                    "id": "16"
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "name": "Sunshine!",
+            "description": "You made it out of the cave!",
+            "paths": [
+            ]
+        },
+        {
+            "id": "6",
+            "name": "Large Room",
+            "description": "Large room roughly in a circular shape.",
+            "paths": [
+                {
+                    "name": "Passage",
+                    "id": "2"
+                },
+                {
+                    "name": "Natural Archway",
+                    "id": "7"
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "name": "Very Large Cavern",
+            "description": "Large natural cavern forms a square. Your flashlight barely hits the other way the cave is so big.",
+            "paths": [
+                {
+                    "name": "Large Passage",
+                    "id": "3"
+                },
+                {
+                    "name": "Passage",
+                    "id": "8"
+                }
+            ]
+        },
+        {
+            "id": "8",
+            "name": "Intersection",
+            "description": "This intersection is the connection of 3 passages.",
+            "paths": [
+                {
+                    "name": "Passage",
+                    "id": "11"
+                },
+                {
+                    "name": "Narrow Passage",
+                    "id": "9"
+                },
+                {
+                    "name": "Very Narrow Passage",
+                    "id": "10"
+                }
+            ]
+        },
+        {
+            "id": "9",
+            "name": "Dead End",
+            "description": "Passage ends here. You have to turn back.",
+            "paths": [
+                {
+                    "name": "Back the Way You Came",
+                    "id": "8"
+                }
+            ]
+        },
+        {
+            "id": "10",
+            "name": "Dead End",
+            "description": "The passage ends in a pool of water. The water is cold and still. You cannot continue in this direction.",
+            "paths": [
+                {
+                    "name": "Back the Way You Came",
+                    "id": "8"
+                }
+            ]
+        },
+        {
+            "id": "11",
+            "name": "Large Intersection",
+            "description": "This intersection has many exits.",
+            "paths": [
+                {
+                    "name": "Small Passage",
+                    "id": "3"
+                },
+                {
+                    "name": "Archway",
+                    "id": "12"
+                },
+                {
+                    "name": "Passage",
+                    "id": "8"
+                },
+                {
+                    "name": "Continue to Next Intersection",
+                    "id": "13"
+                }
+            ]
+        },
+        {
+            "id": "12",
+            "name": "Tiny Room",
+            "description": "No exit other than the one you came in from.",
+            "paths": [
+                {
+                    "name": "Archway",
+                    "id": "11"
+                }
+            ]
+        },
+        {
+            "id": "13",
+            "name": "Intersection",
+            "description": "This is an intersection of 3 passages.",
+            "paths": [
+                {
+                    "name": "Small Passage",
+                    "id": "14"
+                },
+                {
+                    "name": "Lower Passage",
+                    "id": "15"
+                },
+                {
+                    "name": "Rough Passage",
+                    "id": "3"
+                }
+            ]
+        },
+        {
+            "id": "14",
+            "name": "Dead End",
+            "description": "This passage may have continued in the past but is currently blocked by a recent cave in.",
+            "paths": [
+                {
+                    "name": "Small Passage",
+                    "id": "13"
+                }
+            ]
+        },
+        {
+            "id": "15",
+            "name": "Dead End",
+            "description": "This passage gets smaller and smaller the farther you go. Eventually it gets so small you can't continue.",
+            "paths": [
+                {
+                    "name": "Passage",
+                    "id": "13"
+                }
+            ]
+        },
+        {
+            "id": "16",
+            "name": "Intersection",
+            "description": "This is an intersection in a large passage.",
+            "paths": [
+                {
+                    "name": "Small Passage",
+                    "id": "17"
+                },
+                {
+                    "name": "Narrow Passage",
+                    "id": "3"
+                },
+                {
+                    "name": "Passage to Another Intersection",
+                    "id": "4"
+                }
+            ]
+        },
+        {
+            "id": "17",
+            "name": "Dead End",
+            "description": "Rubble and large stones block this passaway. You will have to turn around.",
+            "paths": [
+                {
+                    "name": "Small Passage",
+                    "id": "16"
+                }
+            ]
+        }
+    ]
+}
